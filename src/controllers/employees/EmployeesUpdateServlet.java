@@ -38,7 +38,7 @@ public class EmployeesUpdateServlet extends HttpServlet {
         String _token = (String)request.getParameter("_token");//（不明点）Stringでキャストする意味と、_tokenを設ける意味
         if (_token != null && _token.equals(request.getSession().getId())){//（不明点）.getId()とは、、、Message.classのgetter??
             EntityManager em = DBUtil.createEntityManager();
-            Employee e = em.find(Employee.class, (Integer)request.getSession().getAttribute("message_id"));
+            Employee e = em.find(Employee.class, (Integer)request.getSession().getAttribute("employee_id"));
 
             // 現在の値と異なる社員番号が入力されていたら
             // 重複チェックを行う指定をする
@@ -84,7 +84,7 @@ public class EmployeesUpdateServlet extends HttpServlet {
                 em.close();//DB更新処理
 
                 request.getSession().setAttribute("flush", "更新が完了しました。");
-                request.getSession().removeAttribute("message_id");//←左記の意味が分からない
+                request.getSession().removeAttribute("employee_id");//←左記の意味が分からない
 
                 response.sendRedirect(request.getContextPath() + "/employees/index");
             }
