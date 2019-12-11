@@ -105,7 +105,7 @@ tr.row1 {
 }
 
 tr.row0 {
-    background-color: #fffffff;
+    background-color: #ffffff;
 }
 
 select {
@@ -127,13 +127,13 @@ select {
     display: inline-block;
 }
 
-header a {
+#header a {
     color: #eeeeee;
 
 }
 
 h1 a {
-    color: #eeeeeee;
+    color: #eeeeee;
 }
 
 table#report_list th {
@@ -160,7 +160,7 @@ table#report_list .report_action {
 }
 
 pre {
-    font_family: "Hiragino Kaku Gothic Pro", Meiryo, "MS PGothic", Helvetica, Arial, sans-serif;
+    font-family: "Hiragino Kaku Gothic Pro", Meiryo, "MS PGothic", Helvetica, Arial, sans-serif;
 }
 
 h3 {

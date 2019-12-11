@@ -58,7 +58,8 @@ public class LoginFilter implements Filter {
                 if (servlet_path.matches("/employees.*") && e.getAdmin_flag() == 0){
                     ((HttpServletResponse)response).sendRedirect(context_path + "/");
                     return;
-                }else{// ログイン画面について
+                }
+            }else{// ログイン画面について
                     // ログインしているのにログイン画面を表示させようとした場合は
                     // システムのトップページにリダイレクト
                     if (e != null){
@@ -69,7 +70,7 @@ public class LoginFilter implements Filter {
                 }
 
             }
-        }
+
 
         chain.doFilter(request, response);
     }

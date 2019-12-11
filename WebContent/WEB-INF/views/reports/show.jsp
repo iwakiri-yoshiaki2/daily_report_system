@@ -19,7 +19,9 @@
                     </tr>
                     <tr>
                         <th>内容</th>
-                        <pre><c:out value = "${report.content}" /></pre>
+                        <td>
+                            <pre><c:out value = "${report.content}" /></pre>
+                        </td>
                     </tr>
                     <tr>
                         <th>登録日時</th>
