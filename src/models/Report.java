@@ -1,4 +1,4 @@
-package models;//要修正・出勤、退勤時間追加
+package models;
 
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -61,6 +61,30 @@ public class Report {
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
+
+    //出勤時間、退勤時間の項目追加（12/15）
+    @Column(name = "attendance_time")
+    private Timestamp attendance_time;
+
+    @Column(name = "clocking_out_time")
+    private Timestamp clocking_out_time;
+
+
+    public Timestamp getAttendance_time() {
+        return attendance_time;
+    }
+
+    public void setAttendance_time(Timestamp attendance_time) {
+        this.attendance_time = attendance_time;
+    }
+
+    public Timestamp getClocking_out_time() {
+        return clocking_out_time;
+    }
+
+    public void setClocking_out_time(Timestamp clocking_out_time) {
+        this.clocking_out_time = clocking_out_time;
+    }
 
     public Integer getId() {
         return id;

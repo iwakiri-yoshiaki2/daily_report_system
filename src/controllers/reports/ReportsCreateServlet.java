@@ -53,10 +53,15 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
 
+            //追加分（出勤時間・退勤時間）
+            r.setAttendance_time(Timestamp.valueOf(request.getParameter("attendance_time")));
+            r.setClocking_out_time(Timestamp.valueOf(request.getParameter("clocking_out_time")));
+
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
+
 
             List<String> errors = ReportValidator.validate(r);
             if (errors.size() > 0){
