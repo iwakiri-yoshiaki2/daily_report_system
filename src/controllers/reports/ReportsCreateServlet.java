@@ -63,7 +63,11 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setUpdated_at(currentTime);
 
 
+
+
             List<String> errors = ReportValidator.validate(r);
+            //重複チェック（複数件登録）
+            
             if (errors.size() > 0){
                 em.close();
 

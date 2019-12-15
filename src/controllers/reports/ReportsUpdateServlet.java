@@ -48,6 +48,7 @@ public class ReportsUpdateServlet extends HttpServlet {
             r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
             List<String> errors = ReportValidator.validate(r);
+            //重複チェック（重複件数）
             if (errors.size() > 0){
                 em.close();
 

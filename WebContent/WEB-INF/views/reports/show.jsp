@@ -17,6 +17,16 @@
                         <th>日付</th>
                         <td><fmt:formatDate value = "${report.report_date}" /></td>
                     </tr>
+                    <!-- 新規修正箇所 -->
+                    <tr>
+                        <th>出勤時間</th>
+                        <td><fmt:formatDate value = "${report.attendance_time}" pattern = "HH:mm"/></td>
+                    </tr>
+                    <tr>
+                        <th>退勤時間</th>
+                        <td><fmt:formatDate value = "${report.clocking_out_time}" pattern = "HH:mm" /></td>
+                    </tr>
+                    <!-- 新規修正箇所 -->
                     <tr>
                         <th>内容</th>
                         <td>

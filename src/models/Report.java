@@ -62,7 +62,7 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
-    //出勤時間、退勤時間の項目追加（12/15）
+    //出勤時間、退勤時間の項目追加（12/15）int型にする！
     @Column(name = "attendance_time")
     private Timestamp attendance_time;
 

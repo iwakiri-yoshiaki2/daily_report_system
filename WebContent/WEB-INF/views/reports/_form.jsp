@@ -13,13 +13,13 @@
 <label for = "report_date">日付</label><br />
 <input type = "date" name = "report_date" value = "<fmt:formatDate value = '${report.report_date}' pattern = 'yyyy-MM-dd' />" />
 <br /><br  />
-<!-- 出勤、退勤追加 -->
+<!-- 出勤、退勤追加 まずtextから 初期値の設定（１８時３０分等）-->
 <label for = "attendance_time">出勤時間</label><br />
-<input type = "time" name = "attendance_time" value = "HH:mm" step = "1800"/>
+<input type = "time" name = "attendance_time" value = "HH:mm" step = "1800"/><!-- 30分刻み -->
 <br /><br  />
 
 <label for = "clocking_out_time">退勤時間</label><br />
-<input type = "time" name = "clocking_out_time" value = "HH:mm" step = "1800" />
+<input type = "time" name = "clocking_out_time" value = "HH:mm" step = "1800" /><!-- 30分刻み -->
 <br /><br  />
 
 <label for = "name">氏名</label><br />
