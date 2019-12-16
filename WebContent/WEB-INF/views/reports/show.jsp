@@ -20,11 +20,11 @@
                     <!-- 新規修正箇所 -->
                     <tr>
                         <th>出勤時間</th>
-                        <td><fmt:formatDate value = "${report.attendance_time}" pattern = "HH:mm"/></td>
+                        <td>${report.attendance_time_hour}時${report.attendance_time_minute}分</td>
                     </tr>
                     <tr>
                         <th>退勤時間</th>
-                        <td><fmt:formatDate value = "${report.clocking_out_time}" pattern = "HH:mm" /></td>
+                        <td>${report.clocking_out_time_hour}時${report.clocking_out_time_minute}分</td>
                     </tr>
                     <!-- 新規修正箇所 -->
                     <tr>

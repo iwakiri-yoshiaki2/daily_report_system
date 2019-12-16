@@ -27,8 +27,8 @@
                         <td class = "report_date"><fmt:formatDate value = '${report.report_date}' pattern = 'yy-MM-dd' /></td>
                         <td class = "report_title">${report.title}</td>
                         <!-- 新規修正箇所 -->
-                        <td class = "attendance_time"><fmt:formatDate value = '${report.attendance_time}' pattern = 'HH:mm' /></td>
-                        <td class = "clocking_out_time"><fmt:formatDate value = '${report.clocking_out_time}' pattern = 'HH:mm' /></td>
+                        <td class = "attendance_time">${report.attendance_time_hour}時${report.attendance_time_minute}分</td>
+                        <td class = "clocking_out_time">${report.clocking_out_time_hour}時${report.clocking_out_time_minute}分</td>
                         <!-- 新規修正箇所 -->
                         <td class = "report_action"><a href = "<c:url value = '/reports/show?id=${report.id}' />">詳細を見る</a></td>
                     </tr>

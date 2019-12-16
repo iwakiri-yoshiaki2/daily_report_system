@@ -54,8 +54,10 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setContent(request.getParameter("content"));
 
             //追加分（出勤時間・退勤時間）
-            r.setAttendance_time(Timestamp.valueOf(request.getParameter("attendance_time")));
-            r.setClocking_out_time(Timestamp.valueOf(request.getParameter("clocking_out_time")));
+            r.setAttendance_time_hour(Integer.parseInt(request.getParameter("attendance_time_hour")));
+            r.setAttendance_time_minute(Integer.parseInt(request.getParameter("attendance_time_minute")));
+            r.setClocking_out_time_hour(Integer.parseInt(request.getParameter("clocking_out_time_hour")));
+            r.setClocking_out_time_minute(Integer.parseInt(request.getParameter("clocking_out_time_minute")));
 
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
@@ -67,7 +69,7 @@ public class ReportsCreateServlet extends HttpServlet {
 
             List<String> errors = ReportValidator.validate(r);
             //重複チェック（複数件登録）
-            
+
             if (errors.size() > 0){
                 em.close();
 

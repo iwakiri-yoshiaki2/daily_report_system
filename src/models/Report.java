@@ -63,27 +63,50 @@ public class Report {
     private Timestamp updated_at;
 
     //出勤時間、退勤時間の項目追加（12/15）int型にする！
-    @Column(name = "attendance_time")
-    private Timestamp attendance_time;
+    @Column(name = "attendance_time_hour", nullable = false)
+    private Integer attendance_time_hour;
 
-    @Column(name = "clocking_out_time")
-    private Timestamp clocking_out_time;
+    @Column(name = "attendance_time_minute", nullable = false)
+    private Integer attendance_time_minute;
+
+    @Column(name = "clocking_out_time_hour", nullable = false)
+    private Integer clocking_out_time_hour;
+
+    @Column(name = "clocking_out_time_minute", nullable = false)
+    private Integer clocking_out_time_minute;
 
 
-    public Timestamp getAttendance_time() {
-        return attendance_time;
+
+    public Integer getAttendance_time_hour() {
+        return attendance_time_hour;
     }
 
-    public void setAttendance_time(Timestamp attendance_time) {
-        this.attendance_time = attendance_time;
+    public void setAttendance_time_hour(Integer attendance_time_hour) {
+        this.attendance_time_hour = attendance_time_hour;
     }
 
-    public Timestamp getClocking_out_time() {
-        return clocking_out_time;
+    public Integer getAttendance_time_minute() {
+        return attendance_time_minute;
     }
 
-    public void setClocking_out_time(Timestamp clocking_out_time) {
-        this.clocking_out_time = clocking_out_time;
+    public void setAttendance_time_minute(Integer attendance_time_minute) {
+        this.attendance_time_minute = attendance_time_minute;
+    }
+
+    public Integer getClocking_out_time_hour() {
+        return clocking_out_time_hour;
+    }
+
+    public void setClocking_out_time_hour(Integer clocking_out_time_hour) {
+        this.clocking_out_time_hour = clocking_out_time_hour;
+    }
+
+    public Integer getClocking_out_time_minute() {
+        return clocking_out_time_minute;
+    }
+
+    public void setClocking_out_time_minute(Integer clocking_out_time_minute) {
+        this.clocking_out_time_minute = clocking_out_time_minute;
     }
 
     public Integer getId() {
