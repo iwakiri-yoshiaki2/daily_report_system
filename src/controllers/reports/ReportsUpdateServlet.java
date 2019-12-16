@@ -42,7 +42,14 @@ public class ReportsUpdateServlet extends HttpServlet {
             Report r = em.find(Report.class, (Integer)request.getSession().getAttribute("report_id"));
 
             r.setReport_date(Date.valueOf(request.getParameter("report_date")));
-            //時間、分で分ける（案①）出勤、退勤時間をセット
+
+            //新規追加部分 入力チェック必要（ブランク時）初期画面時：新規登録時の出勤・退勤時間表示
+            r.setAttendance_time_hour(Integer.parseInt(request.getParameter("attendance_time_hour")));
+            r.setAttendance_time_minute(Integer.parseInt(request.getParameter("attendance_time_minute")));
+            r.setClocking_out_time_hour(Integer.parseInt(request.getParameter("clocking_out_time_hour")));
+            r.setClocking_out_time_minute(Integer.parseInt(request.getParameter("clocking_out_time_minute")));
+            //新規追加部分
+
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
             r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
