@@ -59,7 +59,6 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setClocking_out_time_hour(Integer.parseInt(request.getParameter("clocking_out_time_hour")));
             r.setClocking_out_time_minute(Integer.parseInt(request.getParameter("clocking_out_time_minute")));
 
-
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
