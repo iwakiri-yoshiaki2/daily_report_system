@@ -32,6 +32,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getMyReportsCount",
             query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
+            ),
+    @NamedQuery(
+            name = "getMyDailyReportsCount",
+            query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date = :report_date AND r.id <> :id"
             )
 })
 

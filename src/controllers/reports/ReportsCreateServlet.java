@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import checkings.CheckMultipleReports;
 import models.Employee;
 import models.Report;
 import models.validators.ReportValidator;
@@ -63,11 +64,9 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
 
-
-
-
             List<String> errors = ReportValidator.validate(r);
             //重複チェック（複数件登録）
+            errors.addAll(CheckMultipleReports.checkMutiReports(r));
 
             if (errors.size() > 0){
                 em.close();
