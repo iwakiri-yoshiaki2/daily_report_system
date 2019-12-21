@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import checkings.CheckMultipleReports;
 import models.Report;
 import models.validators.ReportValidator;
 import utils.DBUtil;
@@ -56,6 +57,7 @@ public class ReportsUpdateServlet extends HttpServlet {
 
             List<String> errors = ReportValidator.validate(r);
             //重複チェック（重複件数）
+            errors.addAll(CheckMultipleReports.checkMutiReports(r));
             if (errors.size() > 0){
                 em.close();
 
