@@ -27,15 +27,15 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getMyAllReports",
-            query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"
+            query = "SELECT r FROM Report AS r WHERE r.employee_id = :employee ORDER BY r.id DESC"
             ),
     @NamedQuery(
             name = "getMyReportsCount",
-            query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
+            query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee_id = :employee"
             ),
     @NamedQuery(
             name = "getMyDailyReportsCount",
-            query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date = :report_date"
+            query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date = :report_date AND r.employee_id = :id"
             )
 })
 
@@ -48,7 +48,7 @@ public class Report {
 
     @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)
-    private Employee employee;
+    private Employee employee_id;
 
     @Column(name = "report_date", nullable = false)
     private Date report_date;
@@ -122,11 +122,11 @@ public class Report {
     }
 
     public Employee getEmployee() {
-        return employee;
+        return employee_id;
     }
 
     public void setEmployee(Employee employee) {
-        this.employee = employee;
+        this.employee_id = employee;
     }
 
     public Date getReport_date() {

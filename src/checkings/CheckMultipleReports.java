@@ -23,8 +23,12 @@ public class CheckMultipleReports {
         EntityManager em = DBUtil.createEntityManager();
         long report_daily_count = em.createNamedQuery("getMyDailyReportsCount", Long.class)
                 .setParameter("report_date", r.getReport_date())
-                //.setParameter("id", r.getId())
+                .setParameter("id", r.getEmployee())
                 .getSingleResult();
+        System.out.println("カウント" + report_daily_count);
+        System.out.println(r.getReport_date());
+        System.out.println(r.getEmployee());
+
         if (report_daily_count >= 1){
             return "本日の日報はすでに登録されています。";
         }
