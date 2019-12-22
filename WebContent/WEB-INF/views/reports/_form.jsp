@@ -13,6 +13,7 @@
 <label for = "report_date">日付</label><br />
 <input type = "date" name = "report_date" value = "<fmt:formatDate value = '${report.report_date}' pattern = 'yyyy-MM-dd' />" />
 <br /><br  />
+
 <!-- 出勤、退勤追加 -->
 <label for = "attendance_time">出勤時間</label><br />
 <!--<input type = "text" name = "attendance_time_hour" value = "${report.attendance_time_hour}"/>-->

@@ -57,7 +57,12 @@ public class ReportsUpdateServlet extends HttpServlet {
 
             List<String> errors = ReportValidator.validate(r);
             //重複チェック（重複件数）
-            errors.addAll(CheckMultipleReports.checkMutiReports(r));
+            if (request.getParameter("report_date") == request.getParameter("old_report_date")){
+                //処理なし
+            }else{
+                errors.addAll(CheckMultipleReports.checkMutiReports(r));
+            }
+
             if (errors.size() > 0){
                 em.close();
 

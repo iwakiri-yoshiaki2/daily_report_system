@@ -6,6 +6,7 @@
             <c:when test = "${report != null}">
                 <h2>日報 編集ページ</h2>
                 <form method = "POST" action = "<c:url value = '/reports/update' />">
+                    <input type = "hidden" name = "old_report_date" value = "${report.report_date}" />
                     <c:import url = "_form.jsp" />
                 </form>
             </c:when>
